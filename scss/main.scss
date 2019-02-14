@@ -1,0 +1,133 @@
+$fontHead: "Felipa", cursive;
+$fontBody: "Courgette", cursive;
+
+@mixin easeOut {
+  transition: 0.5s ease-out all;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: $fontBody;
+  font-size: 24px;
+}
+
+html {
+  height: 100%;
+}
+
+img {
+  width: 80%;
+  border-radius: 10%;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 500px;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+
+  background: #3f0020;
+  background: -moz-linear-gradient(top, #3f0020 0%, #602c4c 100%);
+  background: -webkit-linear-gradient(top, #3f0020 0%, #602c4c 100%);
+  background: linear-gradient(to bottom, #3f0020 0%, #602c4c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f0020', endColorstr='#602c4c',GradientType=0 );
+}
+
+.landing,
+.things,
+.story,
+.finale {
+  transform: translate(1000px);
+  font-family: $fontBody;
+  color: white;
+  @include easeOut;
+
+  &.show {
+    transform: translate(0px);
+  }
+}
+
+.button {
+  padding: 10px;
+  border-radius: 3px;
+}
+.navbar {
+  display: flex;
+  align-content: space-around;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.fullNav {
+  margin-bottom: 10px;
+}
+
+.logo {
+  text-align: center;
+  font-family: $fontHead;
+  font-size: 4rem;
+  color: white;
+  font-weight: 900;
+}
+.comp {
+  position: absolute;
+  top: 30vh;
+  height: 70vh;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.story {
+  padding: 0 20px;
+  display: flex;
+  justify-items: space-evenly;
+  height: 120%;
+
+  p {
+    margin: 20px 0;
+  }
+}
+
+.things {
+  ul {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-top: 15px;
+    }
+  }
+}
+
+.finale {
+  padding: 0 15px;
+}
